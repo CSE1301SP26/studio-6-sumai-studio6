@@ -61,7 +61,7 @@ public class RecursiveMethods {
 	}
 
 	public static int[] reverse(int[] array, int i, int[] arrayR){
-		if(i > array.length){
+		if(i >= array.length){
 			return arrayR;
 		}else{
 			arrayR[i] = array[array.length - i - 1];
@@ -80,9 +80,11 @@ public class RecursiveMethods {
 	 * @return greatest common divisor of p and q
 	 */
 	public static int gcd(int p, int q) {
-		
-			// FIXME compute the gcd of p and q using recursion
-			return 0;
+		if( p%q == 0 ) {
+			return(q);
+		} else {
+			return(gcd(q,p%q));
+		}
 		
 	}
 
